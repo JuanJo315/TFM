@@ -1,0 +1,33 @@
+[gd_scene load_steps=7 format=3 uid="uid://d1eqiethfrt34"]
+
+[ext_resource type="Script" uid="uid://du2y13is7hpai" path="res://NPC Auto/water_dispenser.gd" id="1_3l3ox"]
+[ext_resource type="Texture2D" uid="uid://c70232635jadu" path="res://Assets/Items/Floor Items/Water Dispenser.png" id="2_o385y"]
+[ext_resource type="PackedScene" uid="uid://1hhk5fenehrx" path="res://NPC Auto/interactable_area_object.tscn" id="3_o385y"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_kg1ua"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_t3ydl"]
+size = Vector2(22, 17)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_hwkq7"]
+
+[node name="WaterDispenser" type="StaticBody2D" groups=["Waypoint"]]
+physics_material_override = SubResource("PhysicsMaterial_kg1ua")
+script = ExtResource("1_3l3ox")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -15.5)
+shape = SubResource("RectangleShape2D_t3ydl")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -38)
+texture = ExtResource("2_o385y")
+hframes = 3
+
+[node name="InteractableAreaObject" parent="." instance=ExtResource("3_o385y")]
+position = Vector2(0, -38)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractableAreaObject"]
+position = Vector2(0, 25)
+scale = Vector2(2.5, 1.5)
+shape = SubResource("CapsuleShape2D_hwkq7")

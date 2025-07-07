@@ -1,0 +1,31 @@
+[gd_scene load_steps=7 format=3 uid="uid://dg3uh4sf3wcr0"]
+
+[ext_resource type="Script" uid="uid://cuhgqx22ksq2i" path="res://Mapa Pruebas/printer_text.gd" id="1_veokb"]
+[ext_resource type="Texture2D" uid="uid://81j6cqiq5uuh" path="res://Assets/Items/Floor Items/Printer X.png" id="2_y84t1"]
+[ext_resource type="PackedScene" uid="uid://dkup1ktrsmrju" path="res://Mapa Pruebas/interactable_area_text.tscn" id="3_veokb"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_kg1ua"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_t3ydl"]
+size = Vector2(28, 19)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_1icr4"]
+
+[node name="Printer" type="StaticBody2D"]
+physics_material_override = SubResource("PhysicsMaterial_kg1ua")
+script = ExtResource("1_veokb")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 16.5)
+shape = SubResource("RectangleShape2D_t3ydl")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_y84t1")
+
+[node name="InteractableArea" parent="." instance=ExtResource("3_veokb")]
+interact_text = "E to Copy"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractableArea"]
+position = Vector2(0, 20)
+scale = Vector2(2.5, 1.3)
+shape = SubResource("CapsuleShape2D_1icr4")

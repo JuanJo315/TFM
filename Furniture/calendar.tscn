@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://cr5dxywifc8eq"]
+
+[ext_resource type="Texture2D" uid="uid://d058ysmkvmpbm" path="res://Assets/Items/Wall Items/New Calendar.png" id="1_o6ocq"]
+
+[node name="Calendar" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_o6ocq")
+region_enabled = true
+region_rect = Rect2(10, 4, 11, 18)

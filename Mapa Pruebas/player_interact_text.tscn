@@ -1,0 +1,40 @@
+[gd_scene load_steps=4 format=3 uid="uid://d14vsxspe6dsf"]
+
+[ext_resource type="Script" uid="uid://co6sbmr4hrtiu" path="res://Mapa Pruebas/player_interact_function.gd" id="1_g8nqi"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_xbex0"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_2325l"]
+font_size = 12
+outline_size = 3
+outline_color = Color(0, 0, 0, 1)
+
+[node name="PlayerInteractText" type="Node2D"]
+script = ExtResource("1_g8nqi")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_xbex0")
+
+[node name="NameInteractObject" type="Label" parent="."]
+z_index = 10
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -10.0
+offset_top = -25.0
+offset_right = 61.0
+offset_bottom = -8.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.3, 0.3)
+text = "E to Interact"
+label_settings = SubResource("LabelSettings_2325l")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
+[connection signal="area_exited" from="Area2D" to="." method="_on_area_2d_area_exited"]

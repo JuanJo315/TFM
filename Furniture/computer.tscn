@@ -1,0 +1,37 @@
+[gd_scene load_steps=7 format=3 uid="uid://bpyq7hnekl304"]
+
+[ext_resource type="Script" uid="uid://bacqv8enjxvof" path="res://Furniture/computer.gd" id="1_uoko4"]
+[ext_resource type="Texture2D" uid="uid://bry6j5il6w0uo" path="res://Assets/Items/Table Items/Computer.png" id="2_nofxi"]
+[ext_resource type="PackedScene" uid="uid://1hhk5fenehrx" path="res://NPC Auto/interactable_area_object.tscn" id="3_ko0mn"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_kg1ua"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_t3ydl"]
+size = Vector2(28, 17.5)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_hwkq7"]
+radius = 5.0
+
+[node name="Computer" type="StaticBody2D" groups=["Waypoint"]]
+physics_material_override = SubResource("PhysicsMaterial_kg1ua")
+script = ExtResource("1_uoko4")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -21.375)
+scale = Vector2(0.5, 0.5)
+shape = SubResource("RectangleShape2D_t3ydl")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -24)
+texture = ExtResource("2_nofxi")
+hframes = 3
+vframes = 2
+frame = 2
+
+[node name="InteractableAreaObject" parent="." instance=ExtResource("3_ko0mn")]
+position = Vector2(0, -24)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractableAreaObject"]
+position = Vector2(0, 9)
+scale = Vector2(1.75, 1.7)
+shape = SubResource("CapsuleShape2D_hwkq7")

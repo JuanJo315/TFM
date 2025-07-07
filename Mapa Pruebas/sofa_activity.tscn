@@ -1,0 +1,33 @@
+[gd_scene load_steps=7 format=3 uid="uid://v3kuyvp1dutg"]
+
+[ext_resource type="Script" uid="uid://cjaqok4uq7dng" path="res://Mapa Pruebas/sofa_activity.gd" id="1_ybwww"]
+[ext_resource type="Texture2D" uid="uid://bf8tv53ouxk5" path="res://Assets/Items/Floor Items/Sofa & TV.png" id="2_tlelu"]
+[ext_resource type="PackedScene" uid="uid://b2rrkvkkoan36" path="res://Mapa Pruebas/interactable_area_activity.tscn" id="3_7ut7j"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_kg1ua"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_t3ydl"]
+size = Vector2(28, 19)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_hwkq7"]
+
+[node name="Sofa" type="StaticBody2D"]
+physics_material_override = SubResource("PhysicsMaterial_kg1ua")
+script = ExtResource("1_ybwww")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 16.5)
+scale = Vector2(2.75, 1.05)
+shape = SubResource("RectangleShape2D_t3ydl")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_tlelu")
+region_enabled = true
+region_rect = Rect2(0, 64, 96, 64)
+
+[node name="InteractableArea" parent="." instance=ExtResource("3_7ut7j")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractableArea"]
+position = Vector2(0, 18)
+scale = Vector2(4, 1.7)
+shape = SubResource("CapsuleShape2D_hwkq7")

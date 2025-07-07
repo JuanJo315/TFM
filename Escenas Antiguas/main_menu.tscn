@@ -1,0 +1,101 @@
+[gd_scene load_steps=4 format=3 uid="uid://cqa7wafhau7cd"]
+
+[ext_resource type="Script" uid="uid://du3u020pjv7di" path="res://Scripts/main_menu.gd" id="1_8jp8w"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gxvgn"]
+bg_color = Color(0.430755, 0.24876, 0.0995958, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_s3m0m"]
+bg_color = Color(0.713726, 0.490196, 0, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_8jp8w")
+
+[node name="Fondo" type="Panel" parent="."]
+layout_mode = 0
+offset_right = 1151.0
+offset_bottom = 646.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -200.0
+offset_top = -150.0
+offset_right = 200.0
+offset_bottom = 150.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 15
+alignment = 1
+
+[node name="Start" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 30
+theme_override_styles/hover = SubResource("StyleBoxFlat_gxvgn")
+theme_override_styles/normal = SubResource("StyleBoxFlat_s3m0m")
+text = "Start Game"
+
+[node name="Maps" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 30
+theme_override_styles/hover = SubResource("StyleBoxFlat_gxvgn")
+theme_override_styles/normal = SubResource("StyleBoxFlat_s3m0m")
+text = "Edit Map"
+
+[node name="Settings" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 30
+theme_override_styles/hover = SubResource("StyleBoxFlat_gxvgn")
+theme_override_styles/normal = SubResource("StyleBoxFlat_s3m0m")
+text = "Settings"
+
+[node name="Exit" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 30
+theme_override_styles/hover = SubResource("StyleBoxFlat_gxvgn")
+theme_override_styles/normal = SubResource("StyleBoxFlat_s3m0m")
+text = "Exit"
+
+[node name="Title" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -241.0
+offset_top = 55.0
+offset_right = 236.0
+offset_bottom = 124.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 50
+text = "Company Simulator"
+
+[connection signal="pressed" from="VBoxContainer/Start" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="VBoxContainer/Maps" to="." method="_on_maps_pressed"]
+[connection signal="pressed" from="VBoxContainer/Settings" to="." method="_on_settings_pressed"]
+[connection signal="pressed" from="VBoxContainer/Exit" to="." method="_on_exit_pressed"]

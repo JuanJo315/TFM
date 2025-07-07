@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://dmi4fuf1g33t1"]
+
+[ext_resource type="Texture2D" uid="uid://dfbp24n01ksmr" path="res://Assets/Items/Floor Items/Wooden Furniture.png" id="1_j78f7"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_kg1ua"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_t3ydl"]
+size = Vector2(49, 36)
+
+[node name="MesaCuadradaMadera" type="StaticBody2D"]
+physics_material_override = SubResource("PhysicsMaterial_kg1ua")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 5.5)
+scale = Vector2(1, 0.99924)
+shape = SubResource("RectangleShape2D_t3ydl")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_j78f7")
+region_enabled = true
+region_rect = Rect2(96, 128, 64, 64)

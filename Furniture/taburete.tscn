@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://2p4wv5wsuoqe"]
+
+[ext_resource type="Texture2D" uid="uid://2knx25d3lrtk" path="res://Assets/Items/Floor Items/Taburete.png" id="1_50go0"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_kg1ua"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_50go0"]
+
+[node name="Taburete" type="StaticBody2D"]
+physics_material_override = SubResource("PhysicsMaterial_kg1ua")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 11)
+scale = Vector2(1, 0.6)
+shape = SubResource("CircleShape2D_50go0")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_50go0")

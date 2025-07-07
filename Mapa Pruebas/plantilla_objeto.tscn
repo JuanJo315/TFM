@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://drgwlw435wips"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_kg1ua"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_t3ydl"]
+size = Vector2(28, 19)
+
+[node name="Objeto" type="StaticBody2D"]
+physics_material_override = SubResource("PhysicsMaterial_kg1ua")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 16.5)
+shape = SubResource("RectangleShape2D_t3ydl")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]

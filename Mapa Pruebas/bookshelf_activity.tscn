@@ -1,0 +1,31 @@
+[gd_scene load_steps=7 format=3 uid="uid://chxayvws66bp7"]
+
+[ext_resource type="Script" uid="uid://bqu3geo3a5y3u" path="res://Mapa Pruebas/bookshelf_activity.gd" id="1_3higc"]
+[ext_resource type="Texture2D" uid="uid://dvex7emmkayws" path="res://Assets/Items/Floor Items/Bookshelves.png" id="2_te4gt"]
+[ext_resource type="PackedScene" uid="uid://b2rrkvkkoan36" path="res://Mapa Pruebas/interactable_area_activity.tscn" id="3_udpx2"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_kg1ua"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_t3ydl"]
+size = Vector2(54, 25)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_hwkq7"]
+
+[node name="BookShelf" type="StaticBody2D"]
+physics_material_override = SubResource("PhysicsMaterial_kg1ua")
+script = ExtResource("1_3higc")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 19.5)
+shape = SubResource("RectangleShape2D_t3ydl")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_te4gt")
+hframes = 2
+
+[node name="InteractableArea" parent="." instance=ExtResource("3_udpx2")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractableArea"]
+position = Vector2(0, 25)
+scale = Vector2(3, 1.5)
+shape = SubResource("CapsuleShape2D_hwkq7")

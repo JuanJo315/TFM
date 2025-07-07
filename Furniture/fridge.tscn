@@ -1,0 +1,32 @@
+[gd_scene load_steps=7 format=3 uid="uid://crycaw8w4asyy"]
+
+[ext_resource type="Script" uid="uid://b8nrlwv8357w5" path="res://Furniture/fridge.gd" id="1_27hnn"]
+[ext_resource type="Texture2D" uid="uid://1v2wdqvc2c45" path="res://Assets/Items/Floor Items/Fridge.png" id="2_73pp5"]
+[ext_resource type="PackedScene" uid="uid://1hhk5fenehrx" path="res://NPC Auto/interactable_area_object.tscn" id="3_rt7pe"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_kg1ua"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_t3ydl"]
+size = Vector2(28, 19)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_hwkq7"]
+
+[node name="Fridge" type="StaticBody2D" groups=["Waypoint"]]
+physics_material_override = SubResource("PhysicsMaterial_kg1ua")
+script = ExtResource("1_27hnn")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -16.5)
+shape = SubResource("RectangleShape2D_t3ydl")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -33)
+texture = ExtResource("2_73pp5")
+
+[node name="InteractableAreaObject" parent="." instance=ExtResource("3_rt7pe")]
+position = Vector2(0, -33)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractableAreaObject"]
+position = Vector2(0, 20)
+scale = Vector2(2.5, 1.5)
+shape = SubResource("CapsuleShape2D_hwkq7")

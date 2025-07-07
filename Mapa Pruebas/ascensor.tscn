@@ -1,0 +1,33 @@
+[gd_scene load_steps=7 format=3 uid="uid://b54b2i5jifd8y"]
+
+[ext_resource type="Texture2D" uid="uid://7o46ja055k4d" path="res://Assets/Doors/Elevator.png" id="1_5woec"]
+[ext_resource type="Script" uid="uid://dvdalw03ldonr" path="res://Mapa Pruebas/abrir_ascensor.gd" id="1_ibo5f"]
+[ext_resource type="PackedScene" uid="uid://cdobd3tyqg5xn" path="res://Mapa Pruebas/interactable_area_door.tscn" id="3_ibo5f"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_kg1ua"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_t3ydl"]
+size = Vector2(65, 24)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_hwkq7"]
+radius = 4.85714
+height = 20.0
+
+[node name="Ascensor" type="StaticBody2D"]
+physics_material_override = SubResource("PhysicsMaterial_kg1ua")
+script = ExtResource("1_ibo5f")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 22)
+shape = SubResource("RectangleShape2D_t3ydl")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_5woec")
+hframes = 2
+
+[node name="InteractableArea" parent="." instance=ExtResource("3_ibo5f")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractableArea"]
+position = Vector2(0, 29)
+scale = Vector2(7, 2.5)
+shape = SubResource("CapsuleShape2D_hwkq7")

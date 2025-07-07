@@ -1,0 +1,32 @@
+[gd_scene load_steps=7 format=3 uid="uid://cbxos52c1va76"]
+
+[ext_resource type="Script" uid="uid://dle0yfrxk10eb" path="res://NPC Auto/archive_drawer.gd" id="1_n3lk2"]
+[ext_resource type="Texture2D" uid="uid://b8w7sx36wgs0y" path="res://Assets/Items/Floor Items/Archive Drawer.png" id="2_3t7y2"]
+[ext_resource type="PackedScene" uid="uid://1hhk5fenehrx" path="res://NPC Auto/interactable_area_object.tscn" id="3_3t7y2"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_kg1ua"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_t3ydl"]
+size = Vector2(28, 19)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_hwkq7"]
+
+[node name="ArchiveDrawer" type="StaticBody2D" groups=["Waypoint"]]
+physics_material_override = SubResource("PhysicsMaterial_kg1ua")
+script = ExtResource("1_n3lk2")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -17.5)
+shape = SubResource("RectangleShape2D_t3ydl")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -34)
+texture = ExtResource("2_3t7y2")
+
+[node name="InteractableAreaObject" parent="." instance=ExtResource("3_3t7y2")]
+position = Vector2(0, -34)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractableAreaObject"]
+position = Vector2(0, 20)
+scale = Vector2(2.5, 1.5)
+shape = SubResource("CapsuleShape2D_hwkq7")

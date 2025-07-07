@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://1hhk5fenehrx"]
+
+[ext_resource type="Script" uid="uid://dneti8410wr56" path="res://NPC Auto/interactable_area_object.gd" id="1_6ygx1"]
+
+[node name="InteractableAreaObject" type="Area2D"]
+script = ExtResource("1_6ygx1")

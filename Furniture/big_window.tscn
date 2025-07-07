@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://de77b6svdkel5"]
+
+[ext_resource type="Script" uid="uid://btdsfguu812oq" path="res://Furniture/big_window.gd" id="1_0fpsa"]
+[ext_resource type="Texture2D" uid="uid://b0q0gpwusxlp4" path="res://Assets/Items/Wall Items/Big Windows.png" id="1_qk1ms"]
+
+[node name="BigWindow" type="Node2D"]
+script = ExtResource("1_0fpsa")
+alfombra = 3
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_qk1ms")
+hframes = 2
+vframes = 2
+region_rect = Rect2(0, 0, 32, 32)

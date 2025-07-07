@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://quaqjb4f33jx"]
+
+[ext_resource type="Texture2D" uid="uid://dgdupk3ruh1io" path="res://Assets/Items/Wall Items/Kirby.png" id="1_kcdyb"]
+
+[node name="Kirby" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_kcdyb")
+region_enabled = true
+region_rect = Rect2(5, 3, 22, 25)

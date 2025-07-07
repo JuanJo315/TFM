@@ -1,0 +1,34 @@
+[gd_scene load_steps=7 format=3 uid="uid://c5sccqodew64w"]
+
+[ext_resource type="Script" uid="uid://jcvp0qfvxqne" path="res://Furniture/puerta.gd" id="1_y0xa7"]
+[ext_resource type="Texture2D" uid="uid://c56e2ecmhaal4" path="res://Assets/Doors/Wooden Door.png" id="2_e3fic"]
+[ext_resource type="PackedScene" uid="uid://cdobd3tyqg5xn" path="res://Mapa Pruebas/interactable_area_door.tscn" id="3_3x4oe"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_kg1ua"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_t3ydl"]
+size = Vector2(32, 20)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_hwkq7"]
+radius = 8.5
+height = 32.0
+
+[node name="Puerta" type="StaticBody2D"]
+physics_material_override = SubResource("PhysicsMaterial_kg1ua")
+script = ExtResource("1_y0xa7")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 23)
+shape = SubResource("RectangleShape2D_t3ydl")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_e3fic")
+vframes = 3
+frame = 2
+
+[node name="InteractableArea" parent="." instance=ExtResource("3_3x4oe")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractableArea"]
+position = Vector2(0, 31)
+scale = Vector2(2, 1)
+shape = SubResource("CapsuleShape2D_hwkq7")

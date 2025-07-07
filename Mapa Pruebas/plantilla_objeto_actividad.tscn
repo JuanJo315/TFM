@@ -1,0 +1,26 @@
+[gd_scene load_steps=5 format=3 uid="uid://spteghlfl3ft"]
+
+[ext_resource type="PackedScene" uid="uid://b2rrkvkkoan36" path="res://Mapa Pruebas/interactable_area_activity.tscn" id="1_4q0rj"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_kg1ua"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_t3ydl"]
+size = Vector2(28, 19)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_hwkq7"]
+
+[node name="Objeto" type="StaticBody2D"]
+physics_material_override = SubResource("PhysicsMaterial_kg1ua")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 16.5)
+shape = SubResource("RectangleShape2D_t3ydl")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+
+[node name="InteractableArea" parent="." instance=ExtResource("1_4q0rj")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractableArea"]
+position = Vector2(0, 20)
+scale = Vector2(2.5, 1.3)
+shape = SubResource("CapsuleShape2D_hwkq7")

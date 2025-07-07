@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://cggwpul6phr2e"]
+
+[ext_resource type="Texture2D" uid="uid://d1exkxu2ajsms" path="res://Assets/Items/Table Items/Coffee Cup.png" id="1_g114a"]
+
+[node name="CoffeCup" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_g114a")
+region_enabled = true
+region_rect = Rect2(9, 9, 13, 14)

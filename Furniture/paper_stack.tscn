@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://bo3iukkwl8r4j"]
+
+[ext_resource type="Texture2D" uid="uid://c0ptijp068wxq" path="res://Assets/Items/Table Items/Paper Stack.png" id="1_jstg4"]
+
+[node name="PaperStack" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_jstg4")
+region_enabled = true
+region_rect = Rect2(8, 8, 16, 16)

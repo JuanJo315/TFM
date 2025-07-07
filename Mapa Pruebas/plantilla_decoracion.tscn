@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://c6tky7j0g06ao"]
+
+[node name="Objeto" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+region_rect = Rect2(0, 0, 32, 32)

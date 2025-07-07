@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://wafoi3qyryds"]
+
+[ext_resource type="Texture2D" uid="uid://b7wnd63w3ar5r" path="res://Assets/Activity/Activity Box.png" id="1_4djud"]
+[ext_resource type="Texture2D" uid="uid://dtfrytxpdts33" path="res://Assets/Activity/Activities.png" id="2_646ua"]
+
+[node name="Actividad" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_4djud")
+hframes = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="Sprite2D"]
+position = Vector2(0, -2)
+texture = ExtResource("2_646ua")
+hframes = 3
+vframes = 2

@@ -1,0 +1,11 @@
+{
+	"Boss": {
+		"actions": ["drink", "rest", "eat"]
+	},
+	"Programmer": {
+		"actions": ["drink", "program", "eat"]
+	},
+	"Intern": {
+		"actions": ["drink", "study", "get_copy", "eat"]
+	}
+}

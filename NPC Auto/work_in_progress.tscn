@@ -1,0 +1,76 @@
+[gd_scene load_steps=5 format=3 uid="uid://ir6tftguhmle"]
+
+[ext_resource type="Texture2D" uid="uid://bf8tv53ouxk5" path="res://Assets/Items/Floor Items/Sofa & TV.png" id="1_y4y6k"]
+[ext_resource type="Texture2D" uid="uid://d4e0pasa5344l" path="res://Assets/Characters/Chara Rest.png" id="2_0pg1x"]
+[ext_resource type="Texture2D" uid="uid://b7wnd63w3ar5r" path="res://Assets/Activity/Activity Box.png" id="3_3r8jk"]
+[ext_resource type="Texture2D" uid="uid://dtfrytxpdts33" path="res://Assets/Activity/Activities.png" id="4_wf1ba"]
+
+[node name="WorkInProgress" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.172549, 0.172549, 0.172549, 1)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ColorRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="CenterContainer" type="CenterContainer" parent="ColorRect/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Label" type="Label" parent="ColorRect/VBoxContainer/CenterContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 50
+text = "Work In Progress..."
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CenterContainer2" type="CenterContainer" parent="ColorRect/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 1.5
+
+[node name="Node2D" type="Node2D" parent="ColorRect/VBoxContainer/CenterContainer2"]
+position = Vector2(576, 162)
+scale = Vector2(5, 5)
+
+[node name="Sofa" type="Sprite2D" parent="ColorRect/VBoxContainer/CenterContainer2/Node2D"]
+texture = ExtResource("1_y4y6k")
+region_enabled = true
+region_rect = Rect2(0, 64, 96, 64)
+
+[node name="Character" type="Sprite2D" parent="ColorRect/VBoxContainer/CenterContainer2/Node2D"]
+scale = Vector2(1.2, 1.2)
+texture = ExtResource("2_0pg1x")
+hframes = 4
+frame = 3
+
+[node name="Bubble" type="Sprite2D" parent="ColorRect/VBoxContainer/CenterContainer2/Node2D"]
+position = Vector2(19, -22.4)
+scale = Vector2(0.85, 0.85)
+texture = ExtResource("3_3r8jk")
+hframes = 2
+
+[node name="Activity" type="Sprite2D" parent="ColorRect/VBoxContainer/CenterContainer2/Node2D/Bubble"]
+position = Vector2(0, -2)
+texture = ExtResource("4_wf1ba")
+hframes = 3
+vframes = 2
+frame = 5

@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://cegkh0wb4glqu"]
+
+[ext_resource type="Texture2D" uid="uid://dff1hbv0bsggp" path="res://Assets/Items/Table Items/Phone.png" id="1_kok8x"]
+
+[node name="Phone" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_kok8x")
+region_enabled = true
+region_rect = Rect2(9, 11, 13, 11)

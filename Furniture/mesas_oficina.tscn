@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://cfhakacorg1x1"]
+
+[ext_resource type="Texture2D" uid="uid://df8wtdcmev0o6" path="res://Assets/Items/Floor Items/Big Office Tables.png" id="1_jyof1"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_kg1ua"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_t3ydl"]
+size = Vector2(85, 65)
+
+[node name="MesaGris" type="StaticBody2D"]
+physics_material_override = SubResource("PhysicsMaterial_kg1ua")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 10)
+shape = SubResource("RectangleShape2D_t3ydl")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_jyof1")
+region_enabled = true
+region_rect = Rect2(96, 128, 96, 96)

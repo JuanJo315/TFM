@@ -1,0 +1,35 @@
+[gd_scene load_steps=7 format=3 uid="uid://dbt8k37jhx5mf"]
+
+[ext_resource type="Script" uid="uid://bsvlpf7x8ow1c" path="res://Mapa Pruebas/computer_activity.gd" id="1_ja1bm"]
+[ext_resource type="Texture2D" uid="uid://bry6j5il6w0uo" path="res://Assets/Items/Table Items/Computer.png" id="2_dllnc"]
+[ext_resource type="PackedScene" uid="uid://b2rrkvkkoan36" path="res://Mapa Pruebas/interactable_area_activity.tscn" id="3_5knjg"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_kg1ua"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_t3ydl"]
+size = Vector2(28, 17.5)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_hwkq7"]
+radius = 5.0
+
+[node name="Computer" type="StaticBody2D"]
+physics_material_override = SubResource("PhysicsMaterial_kg1ua")
+script = ExtResource("1_ja1bm")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 2.625)
+scale = Vector2(0.5, 0.5)
+shape = SubResource("RectangleShape2D_t3ydl")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_dllnc")
+hframes = 3
+vframes = 2
+frame = 2
+
+[node name="InteractableArea" parent="." instance=ExtResource("3_5knjg")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractableArea"]
+position = Vector2(0, 9)
+scale = Vector2(1.75, 1.5)
+shape = SubResource("CapsuleShape2D_hwkq7")

@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://4hx53kdy301"]
+
+[ext_resource type="Texture2D" uid="uid://cal1wcok2g3w6" path="res://Assets/Items/Table Items/Portrait.png" id="1_w1o1j"]
+
+[node name="Portrait" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_w1o1j")
+region_enabled = true
+region_rect = Rect2(8, 8, 16, 16)

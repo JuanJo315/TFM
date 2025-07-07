@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://86tp8xcvpons"]
+
+[ext_resource type="Texture2D" uid="uid://cqn0l3d5k86ay" path="res://Assets/Items/Wall Items/Medic Pack.png" id="1_yk65l"]
+
+[node name="MedicBox" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_yk65l")
+region_rect = Rect2(0, 0, 32, 32)

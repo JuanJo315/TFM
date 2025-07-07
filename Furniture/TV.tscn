@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://dejyuaet02u4w"]
+
+[ext_resource type="Texture2D" uid="uid://bf8tv53ouxk5" path="res://Assets/Items/Floor Items/Sofa & TV.png" id="1_4h2ol"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_kg1ua"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_t3ydl"]
+size = Vector2(60, 8)
+
+[node name="TV" type="StaticBody2D"]
+physics_material_override = SubResource("PhysicsMaterial_kg1ua")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 22)
+shape = SubResource("RectangleShape2D_t3ydl")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_4h2ol")
+region_enabled = true
+region_rect = Rect2(96, 64, 64, 64)

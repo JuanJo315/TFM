@@ -1,0 +1,110 @@
+[gd_scene load_steps=4 format=3 uid="uid://bw8s5j5gsjwnn"]
+
+[ext_resource type="Script" uid="uid://cts1gg5st6yfu" path="res://Scenes/main_menu_3.gd" id="1_nvb3f"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gxvgn"]
+bg_color = Color(0.430755, 0.24876, 0.0995958, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_s3m0m"]
+bg_color = Color(0.713726, 0.490196, 0, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_nvb3f")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.172833, 0.172833, 0.172833, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 64
+theme_override_constants/margin_top = 64
+theme_override_constants/margin_right = 64
+theme_override_constants/margin_bottom = 64
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 3
+size_flags_stretch_ratio = 1.5
+
+[node name="Prototype" type="Button" parent="MarginContainer/VBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 5
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 30
+theme_override_styles/hover = SubResource("StyleBoxFlat_gxvgn")
+theme_override_styles/normal = SubResource("StyleBoxFlat_s3m0m")
+text = "Prototype"
+
+[node name="NavigationRegion" type="Button" parent="MarginContainer/VBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 5
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 30
+theme_override_styles/hover = SubResource("StyleBoxFlat_gxvgn")
+theme_override_styles/normal = SubResource("StyleBoxFlat_s3m0m")
+text = " Navigation Region "
+
+[node name="WaypointSearch" type="Button" parent="MarginContainer/VBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 5
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 30
+theme_override_styles/hover = SubResource("StyleBoxFlat_gxvgn")
+theme_override_styles/normal = SubResource("StyleBoxFlat_s3m0m")
+text = "Waypoint Search"
+
+[node name="ObjectInteraction" type="Button" parent="MarginContainer/VBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 5
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 30
+theme_override_styles/hover = SubResource("StyleBoxFlat_gxvgn")
+theme_override_styles/normal = SubResource("StyleBoxFlat_s3m0m")
+text = "Object Interaction"
+
+[node name="Office" type="Button" parent="MarginContainer/VBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 5
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 30
+theme_override_styles/hover = SubResource("StyleBoxFlat_gxvgn")
+theme_override_styles/normal = SubResource("StyleBoxFlat_s3m0m")
+text = "Office"
+
+[connection signal="pressed" from="MarginContainer/VBoxContainer2/Prototype" to="." method="_on_prototype_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer2/NavigationRegion" to="." method="_on_navigation_region_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer2/WaypointSearch" to="." method="_on_waypoint_search_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer2/ObjectInteraction" to="." method="_on_object_interaction_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer2/Office" to="." method="_on_office_pressed"]

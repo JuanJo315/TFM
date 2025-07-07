@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://ckitk03w5hyqw"]
+
+[ext_resource type="Texture2D" uid="uid://b7wnd63w3ar5r" path="res://Assets/Activity/Activity Box.png" id="1_c1jct"]
+[ext_resource type="Script" uid="uid://c33iwts23dls6" path="res://Mapa Pruebas/actividad.gd" id="1_h6rrq"]
+[ext_resource type="Texture2D" uid="uid://dtfrytxpdts33" path="res://Assets/Activity/Activities.png" id="2_h6rrq"]
+
+[node name="Actividad" type="Node2D"]
+script = ExtResource("1_h6rrq")
+
+[node name="Bubble" type="Sprite2D" parent="."]
+texture = ExtResource("1_c1jct")
+hframes = 2
+
+[node name="Activity" type="Sprite2D" parent="."]
+position = Vector2(0, -2)
+texture = ExtResource("2_h6rrq")
+hframes = 3
+vframes = 2

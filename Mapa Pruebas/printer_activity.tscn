@@ -1,0 +1,30 @@
+[gd_scene load_steps=7 format=3 uid="uid://b5s2htsyrd2nb"]
+
+[ext_resource type="Script" uid="uid://b2aasuxmv0m5g" path="res://Mapa Pruebas/printer_activity.gd" id="1_ejohj"]
+[ext_resource type="Texture2D" uid="uid://81j6cqiq5uuh" path="res://Assets/Items/Floor Items/Printer X.png" id="2_o4e6v"]
+[ext_resource type="PackedScene" uid="uid://bjx6dvpg53shq" path="res://Mapa Pruebas/interactable_area.tscn" id="3_aaihd"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_kg1ua"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_t3ydl"]
+size = Vector2(28, 19)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_1icr4"]
+
+[node name="Printer" type="StaticBody2D"]
+physics_material_override = SubResource("PhysicsMaterial_kg1ua")
+script = ExtResource("1_ejohj")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 16.5)
+shape = SubResource("RectangleShape2D_t3ydl")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_o4e6v")
+
+[node name="InteractableArea" parent="." instance=ExtResource("3_aaihd")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractableArea"]
+position = Vector2(0, 20)
+scale = Vector2(2.5, 1.3)
+shape = SubResource("CapsuleShape2D_1icr4")

@@ -1,0 +1,23 @@
+[gd_scene load_steps=5 format=3 uid="uid://dq7cdisddjhvg"]
+
+[ext_resource type="Texture2D" uid="uid://ckq0mitj045e3" path="res://Assets/Items/Floor Items/Chairs.png" id="1_cckek"]
+[ext_resource type="Script" uid="uid://c2hoh33gwxq06" path="res://Furniture/chair.gd" id="1_sq0yx"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_kg1ua"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_0go1a"]
+
+[node name="Chair" type="StaticBody2D"]
+physics_material_override = SubResource("PhysicsMaterial_kg1ua")
+script = ExtResource("1_sq0yx")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 19)
+scale = Vector2(1, 0.7)
+shape = SubResource("CircleShape2D_0go1a")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_cckek")
+hframes = 3
+vframes = 4
+frame = 6

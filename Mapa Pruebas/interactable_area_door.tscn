@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://cdobd3tyqg5xn"]
+
+[ext_resource type="Script" uid="uid://dn4ybtlbmxtne" path="res://Mapa Pruebas/interactable_area_door.gd" id="1_1i6s2"]
+
+[node name="InteractableArea" type="Area2D"]
+script = ExtResource("1_1i6s2")

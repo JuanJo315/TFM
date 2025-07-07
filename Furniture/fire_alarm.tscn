@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://rin0ldhfmsbr"]
+
+[ext_resource type="Texture2D" uid="uid://2xgsfl68ijup" path="res://Assets/Items/Wall Items/New Fire Alarms.png" id="1_fmgw3"]
+
+[node name="FireAlarm" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_fmgw3")
+hframes = 3
+region_rect = Rect2(0, 0, 32, 32)
