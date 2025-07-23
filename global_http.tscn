@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://ccs60jb7f0r60"]
+
+[ext_resource type="Script" uid="uid://cp7mg5kit50o" path="res://global_http.gd" id="1_hvodj"]
+
+[node name="GlobalHTTP" type="Node"]
+script = ExtResource("1_hvodj")
+
+[node name="HTTPRequest" type="HTTPRequest" parent="."]
+
+[connection signal="request_completed" from="HTTPRequest" to="." method="_on_request_completed"]

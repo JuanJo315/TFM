@@ -21,6 +21,11 @@ ActivitySingleton="*res://activity_singleton.gd"
 SceneManager="*res://scene_manager.gd"
 Camera2d="*res://camera_2d.tscn"
 CustomCharacter="*res://custom_character.gd"
+GlobalHTTP="*res://global_http.tscn"
+
+[display]
+
+window/stretch/mode="canvas_items"
 
 [global_group]
 

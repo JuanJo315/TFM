@@ -1,0 +1,15 @@
+[
+  "idle",
+  "working_on_report",
+  "in_meeting",
+  "at_break",
+  "seeking_help",
+  "walking_to_destination",
+  "coding",
+  "debugging",
+  "on_call",
+  "eating",
+  "drinking_coffee",
+  "patrolling",
+  "greeting_visitors"
+]

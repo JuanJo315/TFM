@@ -1,0 +1,104 @@
+{
+  // ID único del bot
+  "bot_id": "BOT-001",
+
+  // Nombre visible del bot en la interfaz
+  "name": "Alex",
+
+  // Personalidad del bot (puede ser un adjetivo o frase corta)
+  "personality": "methodical",
+
+  // Rol o puesto que ocupa en la oficina
+  "role": "Accountant",
+
+  // Qué está haciendo en este momento
+  "current_status": "working_on_report",
+
+  // Dónde se encuentra físicamente en el mapa del juego
+  "location": "cubicle_A12",
+
+  // Energía restante (0 = agotado, 100 = completamente descansado)
+  "energy_level": 78,
+
+  // Nivel de estrés del bot (0 = relajado, 100 = estresado)
+  "stress_level": 45,
+
+  // Salud general del bot (0 = enfermo, 100 = perfecto estado)
+  "health": 90,
+
+  // Motivación para cumplir su objetivo inmediato
+  "motivation": 85,
+
+  // Curiosidad: nivel de disposición a explorar u observar más allá de su tarea
+  "curiosity": 40,
+
+  // Tolerancia al riesgo (0 = muy prudente, 100 = muy arriesgado)
+  "risk_tolerance": 30,
+
+  // Objetivo general a largo plazo del bot
+  "goal": "Get promoted",
+
+  // Objetivo inmediato que está intentando cumplir ahora mismo
+  "objective": "Complete the quarterly report",
+
+  // Pensamientos internos del bot, sirve para depuración o introspección
+  "inner_thinking": "I need to finish this report before Sarah asks for it again.",
+
+  // Memoria de hechos conocidos por el bot
+  "knowledge": {
+	"project_X_status": "delayed",
+	"sarah_likes": "coffee",
+	"security_code": "1234"
+  },
+
+  // Relaciones sociales con otros colegas
+  "colleague_relations": {
+	"COLLEAGUE-001": {
+	  "name": "Sarah",
+	  "relationship_level": 75,       // Nivel de relación (0–100)
+	  "trust_level": 60,              // Nivel de confianza (0–100)
+	  "respect_level": 80,            // Nivel de respeto (0–100)
+	  "opinion": "Sarah is a competent manager, but a bit demanding.",
+	  "recent_interactions": ["gave positive feedback", "asked for help"]
+	},
+	"COLLEAGUE-002": {
+	  "name": "David",
+	  "relationship_level": 20,
+	  "trust_level": 10,
+	  "respect_level": 40,
+	  "opinion": "David seems to always be slacking off.",
+	  "recent_interactions": ["avoided eye contact", "borrowed a stapler"]
+	}
+  },
+
+  // Nivel de cotilleo que maneja este bot (0–100)
+  "gossip_level": 50,
+
+  // Lista de rumores que ha escuchado o cree que son ciertos
+  "rumors_known": [
+	"Sarah might be leaving the company",
+	"David took a two-hour lunch break"
+  ],
+
+  // Objetos que puede ver en su habitación actual
+  "visible_objects": [
+	"computer_terminal_3",
+	"coffee_mug",
+	"broken_printer"
+  ],
+
+  // IDs de compañeros que están cerca en este momento
+  "nearby_colleagues": [
+	"COLLEAGUE-001",
+	"COLLEAGUE-002"
+  ],
+
+  // Conversaciones oídas en la habitación (aunque no esté involucrado)
+  "heard_conversations": [
+	"Sarah: 'We need to speed this up.'",
+	"David: 'Did someone touch my stapler?'"
+  ],
+
+  // Evento actual que ocurre en la habitación (incluye actor si aplica)
+  "current_event": "fire_drill_triggered_by:David"
+}

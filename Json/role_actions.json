@@ -1,11 +1,23 @@
 {
-	"Boss": {
-		"actions": ["drink", "rest", "eat"]
-	},
-	"Programmer": {
-		"actions": ["drink", "program", "eat"]
-	},
-	"Intern": {
-		"actions": ["drink", "study", "get_copy", "eat"]
-	}
+  "Boss": {
+	"actions": ["drink", "rest", "eat", "hold_meeting", "give_feedback", "approve_budget"]
+  },
+  "Programmer": {
+	"actions": ["drink", "program", "eat", "debug", "code_review", "attend_scrum"]
+  },
+  "Intern": {
+	"actions": ["drink", "study", "get_copy", "eat", "ask_questions", "run_errands"]
+  },
+  "Accountant": {
+	"actions": ["drink", "calculate", "prepare_report", "eat", "attend_meeting"]
+  },
+  "Project Manager": {
+	"actions": ["drink", "plan", "hold_meeting", "eat", "monitor_progress"]
+  },
+  "Library Manager": {
+	"actions": ["drink", "check_logs", "greet_visitors", "eat", "organize_books"]
+  },
+  "Janitor": {
+	"actions": ["drink", "repair", "clean_window", "eat", "mop_floor"]
+  }
 }

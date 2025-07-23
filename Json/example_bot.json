@@ -1,0 +1,68 @@
+{
+  "bot_id": "",
+  "name": "",
+  "personality": "",
+  "role": "",
+  "current_status": "",
+  "location": "",
+  "energy_level": 0,
+  "stress_level": 0,
+  "health": 0,
+  "motivation": 0,
+  "curiosity": 0,
+  "risk_tolerance": 0,
+
+  "llm_state": {
+	"goal": "",
+	"objective": "",
+	"inner_thinking": "",
+	"knowledge": {
+	  "project_X_status": "",
+	  "someone_likes": "",
+	  "security_code": ""
+	},
+	"colleague_relations": {
+	  "COLLEAGUE-001": {
+		"name": "",
+		"relationship_level": 0,
+		"trust_level": 0,
+		"respect_level": 0,
+		"opinion": "",
+		"recent_interactions": [
+		  "",
+		  ""
+		]
+	  },
+	  "COLLEAGUE-002": {
+		"name": "",
+		"relationship_level": 0,
+		"trust_level": 0,
+		"respect_level": 0,
+		"opinion": "",
+		"recent_interactions": [
+		  "",
+		  ""
+		]
+	  }
+	},
+	"gossip_level": 0,
+	"rumors_known": [
+	  "",
+	  ""
+	],
+	"visible_objects": [
+	  "",
+	  "",
+	  ""
+	],
+	"nearby_colleagues": [
+	  "",
+	  ""
+	],
+	"heard_conversations": [
+	  "",
+	  ""
+	],
+	"current_event": ""
+  },
+}

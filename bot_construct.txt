@@ -1,0 +1,62 @@
+# Al darle al botón de confirmar, se contruyen 
+# los diccionarios de Bots (datos y valores)
+var bots = []
+for bot_data in BotList:  # Lista local de bots con id, nombre, rol y color
+	bots.append({
+		"bot_id": bot_data.id,
+		"name": bot_data.name,
+		"role": bot_data.role,
+		"location": bot_data.location,
+		"current_status": bot_data.initial_status,
+		"personality": "",
+		"energy_level": 0,
+		"stress_level": 0,
+		"health": 0,
+		"motivation": 0,
+		"curiosity": 0,
+		"risk_tolerance": 0,
+		"llm_state": {
+			"goal": "",
+			"objective": "",
+			"inner_thinking": "",
+			"knowledge": {},
+			"colleague_relations": {},      # se rellenará abajo
+			"gossip_level": 0,
+			"rumors_known": [],
+			"visible_objects": [],
+			"nearby_colleagues": [],
+			"heard_conversations": [],
+			"current_event": ""
+		}
+	})
+
+# Se configura el payload completo del prompt:
+var prompt_dict = {
+	"model": "gemma3",
+	"stream": false,
+	"messages": [
+		{
+			"role": "system",
+			"content": "Eres un LLM que gestiona N bots en una oficina. Recibirás un objeto JSON con la lista completa de bots y configuraciones. Por cada bot, debes:\n" +
+					   " 1) Rellenar `personality`, `energy_level`, `stress_level`, `health`, `motivation`, `curiosity`, `risk_tolerance` con valores 0–100.\n" +
+					   " 2) Elegir un `goal` (usa goal.json) y un `objective` (usa objective.json) sacados de su rol (usa role_actions.json).\n" +
+					   " 3) Escribir un `inner_thinking` breve.\n" +
+					   " 4) Añadir un `knowledge` relevante (saca uno o varios de knowledge.json).\n" +
+					   " 5) Para `colleague_relations`, **calcula** la relación entre este bot y **cada** otro bot de la lista: para cada par, crea una entrada con niveles 0–100 y un `opinion` breve y `recent_interactions`. \n" +
+					   "6) Rellena `gossip_level`, `visible_objects`, `nearby_colleagues`, `heard_conversations` y `current_event`.\n" +
+					   "Tu **única** salida debe ser un JSON con la misma estructura, donde `"bots"` es un array de bots completos."
+		},
+		{
+			"role": "user",
+			"content": JSON.stringify(
+				"bots": bots,
+				"role_actions": role_actions.json,   # importaciones
+				"personalities": personalities.json, 
+				"events": events.json, 
+				"goal": goal.json,
+				"objective": objective.json,
+				"knowledge": knowledge.json 
+			})
+		}
+	]
+}

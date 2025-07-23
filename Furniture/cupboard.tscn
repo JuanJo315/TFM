@@ -1,12 +1,9 @@
-[gd_scene load_steps=3 format=3 uid="uid://ku0d0go2us3o"]
+[gd_scene load_steps=2 format=3 uid="uid://ku0d0go2us3o"]
 
 [ext_resource type="Texture2D" uid="uid://dbkli3t70ntwb" path="res://Assets/Items/Wall Items/Large Cupboard.png" id="1_e2i78"]
 
-[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_kg1ua"]
-
-[node name="Cupboard" type="StaticBody2D"]
+[node name="Cupboard" type="Node2D"]
 scale = Vector2(0.75, 0.75)
-physics_material_override = SubResource("PhysicsMaterial_kg1ua")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_e2i78")
