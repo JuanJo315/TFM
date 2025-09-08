@@ -30,12 +30,20 @@ var drag_start_camera_pos: Vector2 = Vector2.ZERO
 var is_dragging: bool = false
 var camera_locked: bool = false
 
+# Focus Mode 
+var focus_enabled := false
+var focus_target: Node2D = null
+@export var follow_lerp := 8.0
+
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	zoom_target = zoom
 	initial_zoom = zoom
 	initial_pos = position
 	make_current()
+	
+	CustomModeManager.current_runtime_changed.connect(_on_current_npc_changed)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
@@ -52,8 +60,30 @@ func _process(delta: float) -> void:
 		reset_camera()
 		return
 	
-	zoom_in_out(delta)
+	#zoom_in_out(delta)
 	#simple_pan(delta)
+	#click_and_drag()
+	
+	# Activate Focus Mode 
+	if Input.is_action_just_pressed("focus_mode"):
+		if focus_enabled: 
+			_disable_focus()
+		else: 
+			_enable_focus()
+	
+	# Change focused NPC with arrow keys 
+	if Input.is_action_just_pressed("ui_right"):
+		CustomModeManager.next_runtime()
+	if Input.is_action_just_pressed("ui_left"):
+		CustomModeManager.prev_runtime()
+	
+	# Follow NPC
+	if focus_enabled and is_instance_valid(focus_target):
+		global_position = global_position.lerp(focus_target.global_position, clamp(follow_lerp * delta, 0.0, 1.0))
+		return
+
+	# If no Focus, then admits zoom and drag 
+	zoom_in_out(delta)
 	click_and_drag()
 	
 func zoom_in_out(delta): 
@@ -69,27 +99,6 @@ func zoom_in_out(delta):
 	
 		# Now so the zoom moves gradually to the target  
 		zoom = zoom.slerp(zoom_target, zoom_speed * delta)
-"""
-func simple_pan(delta): 
-	# We write the variable here because it wouldn't 
-	# stop moving if placed outside the function 
-	var camera_move: Vector2 = Vector2.ZERO
-	
-	
-	if !GameManager.filesystem_shown: 
-		if Input.is_action_pressed("KeyW"): 
-			# position.y -= 1
-			cameraMove.y -= camera_speed
-		if Input.is_action_pressed("KeyS"): 
-			cameraMove.y += camera_speed
-		if Input.is_action_pressed("KeyA"): 
-			cameraMove.x -= camera_speed
-		if Input.is_action_pressed("KeyD"): 
-			cameraMove.x += camera_speed 
-	
-	camera_move = camera_move.normalized()
-	position += camera_move * delta * 1000 * (1/zoom.x)
-"""
 
 func click_and_drag(): 
 	#if !GameManager.filesystem_shown: 
@@ -109,3 +118,20 @@ func reset_camera():
 	zoom_target = initial_zoom 
 	zoom = initial_zoom 
 	position = initial_pos
+
+# When the watched NPC changes 
+func _on_current_npc_changed(npc):
+	if focus_enabled:
+		focus_target = npc
+
+# We habilitate Focus Mode 
+func _enable_focus():
+	var npc = CustomModeManager.get_current_runtime()
+	if npc:
+		focus_enabled = true
+		focus_target = npc
+
+# We disable Focus Mode 
+func _disable_focus():
+	focus_enabled = false
+	focus_target = null

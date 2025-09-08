@@ -15,13 +15,14 @@ func _on_set_map_pressed() -> void:
 func _on_custom_map_pressed() -> void:
 	print("Custom Map")
 	# get_tree().change_scene_to_file("res://Scenes/character_menu.tscn")
-	SceneManager.change_scene("res://Scenes/character_menu.tscn")
+	# SceneManager.change_scene("res://Scenes/character_menu.tscn") 
+	SceneManager.change_scene("res://Custom Mode/custom_specs.tscn")
 
 
 func _on_settings_pressed() -> void:
 	print("Settings")
 	# get_tree().change_scene_to_file("res://Scenes/settings_menu.tscn")
-	SceneManager.change_scene("res://Scenes/settings_menu.tscn")
+	SceneManager.change_scene("res://Settings/settings_menu.tscn")
 
 
 func _on_exit_pressed() -> void:

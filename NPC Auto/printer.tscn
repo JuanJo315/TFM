@@ -16,15 +16,15 @@ physics_material_override = SubResource("PhysicsMaterial_kg1ua")
 script = ExtResource("1_q46b8")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 16.5)
+position = Vector2(0, -23)
 shape = SubResource("RectangleShape2D_t3ydl")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -40)
 texture = ExtResource("2_6el1r")
 
 [node name="InteractableAreaObject" parent="." instance=ExtResource("3_6el1r")]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="InteractableAreaObject"]
-position = Vector2(0, 20)
 scale = Vector2(2.5, 1.3)
 shape = SubResource("CapsuleShape2D_1icr4")

@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://ccs60jb7f0r60"]
 
-[ext_resource type="Script" uid="uid://cp7mg5kit50o" path="res://global_http.gd" id="1_hvodj"]
+[ext_resource type="Script" uid="uid://cp7mg5kit50o" path="res://Globals/global_http.gd" id="1_hvodj"]
 
 [node name="GlobalHTTP" type="Node"]
 script = ExtResource("1_hvodj")

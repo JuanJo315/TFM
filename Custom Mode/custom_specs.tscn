@@ -1,0 +1,121 @@
+[gd_scene load_steps=5 format=3 uid="uid://bhwpwxx6qau16"]
+
+[ext_resource type="Script" uid="uid://b836geoympdnk" path="res://Custom Mode/custom_specs.gd" id="1_u1q6o"]
+
+[sub_resource type="Theme" id="Theme_u1q6o"]
+default_font_size = 24
+
+[sub_resource type="Theme" id="Theme_hs6yx"]
+default_font_size = 24
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_u1q6o"]
+bg_color = Color(0.713726, 0.490196, 0, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
+[node name="CustomSpecs" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_u1q6o")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.172549, 0.172549, 0.172549, 1)
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 64
+theme_override_constants/margin_top = 64
+theme_override_constants/margin_right = 64
+theme_override_constants/margin_bottom = 64
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "Custom Mode"
+horizontal_alignment = 1
+
+[node name="Spacer" type="Control" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="GridContainer" type="GridContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/h_separation = 16
+theme_override_constants/v_separation = 32
+columns = 2
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/GridContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "Number of NPCs Simulated"
+
+[node name="NPCsNumber" type="SpinBox" parent="MarginContainer/VBoxContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = SubResource("Theme_u1q6o")
+min_value = 1.0
+max_value = 10.0
+value = 1.0
+alignment = 1
+
+[node name="Label2" type="Label" parent="MarginContainer/VBoxContainer/GridContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "Simulation Time "
+
+[node name="SimulationTime" type="SpinBox" parent="MarginContainer/VBoxContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = SubResource("Theme_hs6yx")
+min_value = 1.0
+max_value = 10.0
+value = 1.0
+alignment = 1
+
+[node name="Label3" type="Label" parent="MarginContainer/VBoxContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 24
+text = "Time Scale (Simulation to Real Time  Ratio)"
+
+[node name="TimeScale" type="SpinBox" parent="MarginContainer/VBoxContainer/GridContainer"]
+layout_mode = 2
+theme = SubResource("Theme_hs6yx")
+min_value = 1.0
+max_value = 30.0
+value = 1.0
+alignment = 1
+
+[node name="Spacer2" type="Control" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Button" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxFlat_u1q6o")
+text = "Continuar "
+
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Button" to="." method="_on_button_pressed"]

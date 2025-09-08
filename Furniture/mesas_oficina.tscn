@@ -18,3 +18,9 @@ shape = SubResource("RectangleShape2D_t3ydl")
 texture = ExtResource("1_jyof1")
 region_enabled = true
 region_rect = Rect2(96, 128, 96, 96)
+
+[node name="NavigationObstacle2D" type="NavigationObstacle2D" parent="."]
+vertices = PackedVector2Array(-40, -21, -40, 40, 40, 40, 40, -21)
+affect_navigation_mesh = true
+carve_navigation_mesh = true
+avoidance_layers = 2

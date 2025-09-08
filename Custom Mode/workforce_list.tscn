@@ -1,0 +1,86 @@
+[gd_scene load_steps=2 format=3 uid="uid://k2gqkc5p8vdg"]
+
+[ext_resource type="Script" uid="uid://d0o3t3fj8yjll" path="res://Custom Mode/workforce_list.gd" id="1_lrqld"]
+
+[node name="WorkforceList" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_lrqld")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
+offset_right = 1150.0
+offset_bottom = 642.0
+color = Color(0.541176, 0.85098, 0.992157, 1)
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ColorRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 325.0
+offset_right = -329.0
+offset_bottom = -530.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="ColorRect/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 50
+text = "Employee List"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="ColorRect/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 40
+text = "0/0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ScrollCards" type="ScrollContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+offset_top = 112.0
+offset_right = 1150.0
+offset_bottom = 566.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="CardNPC" type="VBoxContainer" parent="ScrollCards"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 0
+offset_top = 574.0
+offset_right = 1150.0
+offset_bottom = 629.0
+theme_override_constants/separation = 160
+alignment = 1
+
+[node name="AddNPC" type="Button" parent="HBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "Add NPC"
+
+[node name="AddMissing" type="Button" parent="HBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "Add Missing"
+
+[node name="Confirm" type="Button" parent="HBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "Confirm"
+
+[connection signal="pressed" from="HBoxContainer/AddNPC" to="." method="_on_add_npc_button_pressed"]
+[connection signal="pressed" from="HBoxContainer/AddMissing" to="." method="_on_add_missing_pressed"]
+[connection signal="pressed" from="HBoxContainer/Confirm" to="." method="_on_confirm_pressed"]

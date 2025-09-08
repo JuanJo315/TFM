@@ -16,7 +16,7 @@ corner_radius_top_right = 16
 corner_radius_bottom_right = 16
 corner_radius_bottom_left = 16
 
-[node name="MainMenu" type="Control"]
+[node name="TestMenu" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0

@@ -24,9 +24,7 @@ position = Vector2(0, -34)
 texture = ExtResource("2_3t7y2")
 
 [node name="InteractableAreaObject" parent="." instance=ExtResource("3_3t7y2")]
-position = Vector2(0, -34)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="InteractableAreaObject"]
-position = Vector2(0, 20)
 scale = Vector2(2.5, 1.5)
 shape = SubResource("CapsuleShape2D_hwkq7")

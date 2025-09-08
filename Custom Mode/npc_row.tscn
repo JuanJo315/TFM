@@ -1,0 +1,135 @@
+[gd_scene load_steps=4 format=3 uid="uid://b8243qb62pctb"]
+
+[ext_resource type="Texture2D" uid="uid://be1jiw1k7ofom" path="res://Assets/Characters/Chara Move Sprite.png" id="1_rq6iy"]
+[ext_resource type="Script" uid="uid://b4gbfueno3u1i" path="res://Custom Mode/npc_row.gd" id="1_yprfg"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rq6iy"]
+atlas = ExtResource("1_rq6iy")
+region = Rect2(0, 0, 32, 48)
+
+[node name="NPCRow" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_yprfg")
+
+[node name="Card" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.360784, 0.584314, 0.996078, 1)
+
+[node name="MarginContainer" type="MarginContainer" parent="Card"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Card/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 32
+
+[node name="TextureRect" type="TextureRect" parent="Card/MarginContainer/HBoxContainer"]
+layout_mode = 2
+texture = SubResource("AtlasTexture_rq6iy")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="Information" type="HBoxContainer" parent="Card/MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 32
+
+[node name="Name" type="VBoxContainer" parent="Card/MarginContainer/HBoxContainer/Information"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 8
+
+[node name="Label" type="Label" parent="Card/MarginContainer/HBoxContainer/Information/Name"]
+layout_mode = 2
+size_flags_horizontal = 5
+size_flags_vertical = 7
+text = "Nombre:"
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true
+
+[node name="NPCname" type="Label" parent="Card/MarginContainer/HBoxContainer/Information/Name"]
+layout_mode = 2
+size_flags_horizontal = 5
+size_flags_vertical = 7
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Rol" type="VBoxContainer" parent="Card/MarginContainer/HBoxContainer/Information"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 8
+
+[node name="Label" type="Label" parent="Card/MarginContainer/HBoxContainer/Information/Rol"]
+layout_mode = 2
+size_flags_horizontal = 5
+size_flags_vertical = 7
+text = "Rol:"
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true
+
+[node name="NPCrol" type="Label" parent="Card/MarginContainer/HBoxContainer/Information/Rol"]
+layout_mode = 2
+size_flags_horizontal = 5
+size_flags_vertical = 7
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Color" type="VBoxContainer" parent="Card/MarginContainer/HBoxContainer/Information"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 8
+
+[node name="Label" type="Label" parent="Card/MarginContainer/HBoxContainer/Information/Color"]
+layout_mode = 2
+size_flags_horizontal = 5
+size_flags_vertical = 7
+text = "Color:"
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true
+
+[node name="NPCcolor" type="Label" parent="Card/MarginContainer/HBoxContainer/Information/Color"]
+layout_mode = 2
+size_flags_horizontal = 5
+size_flags_vertical = 7
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Card/MarginContainer/HBoxContainer/Information"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.5
+theme_override_constants/separation = 8
+
+[node name="Editar" type="Button" parent="Card/MarginContainer/HBoxContainer/Information/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+text = "Editar"
+
+[node name="Eliminar" type="Button" parent="Card/MarginContainer/HBoxContainer/Information/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+text = "Eliminar"
+
+[connection signal="pressed" from="Card/MarginContainer/HBoxContainer/Information/VBoxContainer/Editar" to="." method="_on_editar_pressed"]
+[connection signal="pressed" from="Card/MarginContainer/HBoxContainer/Information/VBoxContainer/Eliminar" to="." method="_on_eliminar_pressed"]

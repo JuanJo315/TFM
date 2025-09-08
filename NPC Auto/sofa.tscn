@@ -1,0 +1,38 @@
+[gd_scene load_steps=8 format=3 uid="uid://88vxrvjgqkqd"]
+
+[ext_resource type="Script" uid="uid://j25jg4f4xv64" path="res://NPC Auto/sofa.gd" id="1_cijc0"]
+[ext_resource type="Texture2D" uid="uid://bf8tv53ouxk5" path="res://Assets/Items/Floor Items/Sofa & TV.png" id="2_xmvx8"]
+[ext_resource type="PackedScene" uid="uid://1hhk5fenehrx" path="res://NPC Auto/interactable_area_object.tscn" id="3_ss7sx"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_kg1ua"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_t3ydl"]
+size = Vector2(22, 17)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ss7sx"]
+atlas = ExtResource("2_xmvx8")
+margin = Rect2(-8, 0, 0, 0)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_hwkq7"]
+
+[node name="Sofa" type="StaticBody2D" groups=["Waypoint"]]
+physics_material_override = SubResource("PhysicsMaterial_kg1ua")
+script = ExtResource("1_cijc0")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -19)
+scale = Vector2(3.5, 1)
+shape = SubResource("RectangleShape2D_t3ydl")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -38)
+texture = SubResource("AtlasTexture_ss7sx")
+hframes = 2
+vframes = 2
+
+[node name="InteractableAreaObject" parent="." instance=ExtResource("3_ss7sx")]
+scale = Vector2(1.675, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractableAreaObject"]
+scale = Vector2(2.5, 1.5)
+shape = SubResource("CapsuleShape2D_hwkq7")

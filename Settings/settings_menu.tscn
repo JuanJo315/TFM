@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://ciefyay4d5v2l"]
 
-[ext_resource type="Script" uid="uid://dilrcwkcrj5su" path="res://Scenes/settings_menu.gd" id="1_icv2g"]
+[ext_resource type="Script" uid="uid://dilrcwkcrj5su" path="res://Settings/settings_menu.gd" id="1_icv2g"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gxvgn"]
 bg_color = Color(0.430755, 0.24876, 0.0995958, 1)
@@ -16,7 +16,7 @@ corner_radius_top_right = 16
 corner_radius_bottom_right = 16
 corner_radius_bottom_left = 16
 
-[node name="MainMenu" type="Control"]
+[node name="SettingsMenu" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
